@@ -71,4 +71,7 @@ app\assets\javascripts\application.jsにデフォルトでincludeするJSを記�
 
 #個別でjsを読み込み場合は、ページに↓を追記、"home"はjsファイル名
 = javascript_include_tag "home"
+
+#自動的にAction毎でcssを読み込みたい場合はlayoutファイルに↓追加
+<%= stylesheet_link_tag    "#{controller_name}/#{action_name}", media: 'all', 'data-turbolinks-track': 'reload' %>
 ```
