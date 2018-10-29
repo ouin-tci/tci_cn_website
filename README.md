@@ -57,6 +57,9 @@ config\initializers\assets.rb各JSとCSSファイルを記入する
 #Rails.application.config.assets.precompile += %w( home.js)
 ↓
 Rails.application.config.assets.precompile += %w( home.js home.css news.js news.css)
+↓
+あるフォルダーのしたにあるファイルをすべて読み込みたい場合
+Rails.application.config.assets.precompile += %w( home/* news/*)
 
 app\assets\javascripts\application.jsにデフォルトでincludeするJSを記載
 //= require rails-ujs
