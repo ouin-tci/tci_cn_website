@@ -69,7 +69,7 @@ app\assets\javascripts\application.jsにデフォルトでincludeするJSを記�
 //= require jquery_ujs ←JQueryを利用する場合追記
 //= require_tree . ←デフォルトでassetフォルダーにあるファイルをすべて読み込み、個別で読み込みたいときには // require_tree .に変更
 
-#個別でjsを読み込み場合は、ページに↓を追記、"home"はjsファイル名
+#個別でjsを読み込み場合は、ページに↓を追記、"home"はjsファイル名(下記はhamlの記法)
 = javascript_include_tag "home"
 
 #自動的にAction毎でcssを読み込みたい場合はlayoutファイルに↓追加
