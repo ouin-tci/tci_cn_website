@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+環境インストール
+```
+#必要なインストールファイルをダウンロード
+#ruby install
+#インストール後、立ちあがったcommand promptに1を選択
 
-Things you may want to cover:
+https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.4-2/rubyinstaller-devkit-2.4.4-2-x64.exe
 
-* Ruby version
 
-* System dependencies
+#nodejs install
+https://nodejs.org/dist/v8.12.0/node-v8.12.0-x64.msi
 
-* Configuration
+#CMD検証
+ruby -v
+node -v
 
-* Database creation
+C:\user>ruby -v
+ruby 2.4.4p296 (2018-03-28 revision 63013) [x64-mingw32]
 
-* Database initialization
+C:\user>node -v
+v8.11.3
 
-* How to run the test suite
+gem install rails
+rails new tci_cn_website
 
-* Services (job queues, cache servers, search engines, etc.)
+cd path\to\tci_cn_website
+```
 
-* Deployment instructions
+editorでtci_cn_websiteにあるGemfileを編集
 
-* ...
+```
+#追加
+gem 'sassc-rails'
+gem 'haml-rails'
+gem 'jquery-rails'
+
+#bundle install実行
+CMD
+cd path/to/tci_cn_website
+bundle install
+#サーバーを起動
+rails s
+
+#ブラウザでアクセス、デフォルトポートは3000
+localhost:3000
+```
+
+
+```
+Railsはデフォルトでassetフォルダーの下にあるjavascriptとstylesheetファイルを全部includeするため、
+個別で読み込みしたい場合は以下を修正する
+
+config\initializers\assets.rb各JSとCSSファイルを記入する
+
+#Rails.application.config.assets.precompile += %w( home.js)
+↓
+Rails.application.config.assets.precompile += %w( home.js home.css news.js news.css)
+
+app\assets\javascripts\application.jsにデフォルトでincludeするJSを記載
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require jquery ←JQueryを利用する場合追記
+//= require jquery_ujs ←JQueryを利用する場合追記
+//= require_tree . ←デフォルトでassetフォルダーにあるファイルをすべて読み込み、個別で読み込みたいときには // require_tree .に変更
+
+```
