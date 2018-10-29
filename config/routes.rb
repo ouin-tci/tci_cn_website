@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'new_layout/index'
   get 'news/index'
   root 'home#index'
   get 'home/index'
