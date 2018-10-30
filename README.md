@@ -75,3 +75,19 @@ app\assets\javascripts\application.jsにデフォルトでincludeするJSを記�
 #自動的にAction毎でcssを読み込みたい場合はlayoutファイルに↓追加
 <%= stylesheet_link_tag    "#{controller_name}/#{action_name}", media: 'all', 'data-turbolinks-track': 'reload' %>
 ```
+
+gitlab mail setting
+
+```
+gitlab_rails['smtp_enable'] = true
+gitlab_rails['smtp_address'] = "smtp.exmail.qq.com"
+gitlab_rails['smtp_port'] = 465
+gitlab_rails['smtp_user_name'] = "xx@xx"
+gitlab_rails['smtp_password'] = "authorized code"
+gitlab_rails['smtp_domain'] = "exmail.qq.com"
+gitlab_rails['smtp_authentication'] = "login"
+gitlab_rails['smtp_enable_starttls_auto'] = true
+gitlab_rails['smtp_tls'] = true
+gitlab_rails['gitlab_email_from'] = "xx@xx"
+
+```
